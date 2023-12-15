@@ -1,10 +1,16 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './components/notifications/App.jsx'
-import './index.scss';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+import './server/mock-server.js'
+import {store} from "./store.js";
+import Notifications from "./components/notifications/Notifications.jsx";
+import "./index.scss";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+    <React.StrictMode>
+        <Provider store={store}>
+            <Notifications />
+        </Provider>
+    </React.StrictMode>
+);
