@@ -15,10 +15,11 @@ function App() {
     const counter = useSelector((state) => state.counter.value);
 
     return (
-      <div>
-        <div>{counter}</div>
-        <button onClick={() => dispatch(increment())}>Increment counter</button>
-        <button onClick={() => dispatch(decrement())}>Decrement counter</button>
+      <div className="notifications">
+        <header className="notificetions__header">
+          <h1 className="notitfications__title">Уведовления</h1>
+          <ul className="notifications__list"></ul>
+        </header>
       </div>
     )
 }
