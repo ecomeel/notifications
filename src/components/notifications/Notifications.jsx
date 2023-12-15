@@ -1,4 +1,4 @@
-import "./app.scss";
+import "./notifications.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { increment, decrement, setValue } from "./counterSlice";
 import { useEffect } from "react";
@@ -16,10 +16,14 @@ function App() {
 
     return (
       <div className="notifications">
-        <header className="notificetions__header">
-          <h1 className="notitfications__title">Уведовления</h1>
-          <ul className="notifications__list"></ul>
-        </header>
+        <div className="container">
+          <header className="notifications__header">
+            <h1 className="notifications__title">Уведовления</h1>
+          </header>
+          <ul className="notifications__list">
+            <li>herjkfd</li>
+          </ul>
+        </div>
       </div>
     )
 }
