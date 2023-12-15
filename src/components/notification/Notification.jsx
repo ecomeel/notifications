@@ -1,5 +1,0 @@
-function Notification() {
-    return {
-        
-    }
-}
