@@ -1,6 +1,8 @@
 .notifications {
     height: 100%;
 
+
+
     &__title {
         text-align: center;
         font-weight: 700;
@@ -8,5 +10,9 @@
     }
     &__list {
         margin-top: 30px;
+
+        & > *:not(:last-child) {
+            margin-bottom: 10px;
+        }
     }
 }

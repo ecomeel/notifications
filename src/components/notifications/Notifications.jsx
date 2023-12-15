@@ -1,5 +1,6 @@
 import "./notifications.scss";
 import { useSelector, useDispatch } from "react-redux";
+import loadingImg from '../../assets/loading.gif'
 
 import NotificationPreview from "../notification-preview/NotificationPreview";
 
