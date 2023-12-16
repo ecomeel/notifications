@@ -9,15 +9,10 @@ function NotificationsList() {
     return (
         <ul className="notifications__list">
             {notifications.map((notification) => (
-                <Link
+                <NotificationPreview
                     key={notification.id}
-                    to='/offer'
-                >
-                    <NotificationPreview
-                        key={notification.id}
-                        notification={notification}
-                    />
-                </Link>
+                    notification={notification}
+                />
             ))}
         </ul>
     );

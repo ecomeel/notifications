@@ -8,7 +8,7 @@ const initialNotifications = [
         data: "12.23.2342 23:23",
         description: "Desc 1",
         isRead: false,
-        typeOfNotification: "recomendation",
+        typeOf: "recomendation",
     },
     {
         id: uuidv4(),
@@ -16,7 +16,7 @@ const initialNotifications = [
         data: "3.23.2342 23:23",
         description: "Desc 2",
         isRead: true,
-        typeOfNotification: "recomendation",
+        typeOf: "recomendation",
     },
     {
         id: uuidv4(),
@@ -24,7 +24,7 @@ const initialNotifications = [
         data: "6.23.2342 23:23",
         description: "Desc 3",
         isRead: false,
-        typeOfNotification: "recomendation",
+        typeOf: "recomendation",
     },
 ]
 
