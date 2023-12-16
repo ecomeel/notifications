@@ -1,17 +1,9 @@
-// import { configureStore } from "@reduxjs/toolkit";
-
-// import counterReducer from "./components/notifications/counterSlice";
-
-// export default store = configureStore({
-//     reducer: {
-//         counter: counterReducer,
-//     },
-// });
 import { configureStore } from "@reduxjs/toolkit";
-import counterReducer from "./components/notifications/counterSlice";
+
+import notificationReducer from "./components/notifications/notificationsSlice";
 
 export const store = configureStore({
     reducer: {
-        counter: counterReducer,
+        notifications: notificationReducer,
     },
 });

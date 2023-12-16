@@ -1,24 +1,23 @@
 import "./notifications.scss";
 import { useSelector, useDispatch } from "react-redux";
-import loadingImg from '../../assets/loading.gif'
-
-import NotificationPreview from "../notification-preview/NotificationPreview";
-
-import { increment, decrement, setValue } from "./counterSlice";
 import { useEffect } from "react";
+
+import loadingImg from "../../assets/loading.gif";
+import NotificationPreview from "../notification-preview/NotificationPreview";
+import { setNotifications } from "./notificationsSlice";
 
 function App() {
     const dispatch = useDispatch();
 
-    const indexesNotifications = [1, 2, 3, 4, 5, 6];
-    useEffect(() => {
-        fetch("/counter")
-            .then((res) => res.json())
-            .then((json) => {
-                dispatch(setValue(json.value));
-            });
-    }, []);
-    const counter = useSelector((state) => state.counter.value);
+    // useEffect(() => {
+    //     fetch("/counter")
+    //         .then((res) => res.json())
+    //         .then((json) => {
+    //             dispatch(setValue(json.value));
+    //         });
+    // }, []);
+
+    const notifications = useSelector((state) => state.notifications);
 
     return (
         <div className="notifications">
@@ -27,12 +26,9 @@ function App() {
                     <h1 className="notifications__title">Уведовления</h1>
                 </header>
                 <ul className="notifications__list">
-                    {indexesNotifications.map(index => 
-                      <NotificationPreview
-                        key={index}
-                        notIndex={index}
-                      />
-                    )}
+                    {notifications.map((notification) => (
+                        <NotificationPreview key={notification.id} notification={notification} />
+                    ))}
                 </ul>
             </div>
         </div>
