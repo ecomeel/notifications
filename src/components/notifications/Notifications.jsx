@@ -10,7 +10,7 @@ import { useEffect } from "react";
 function App() {
     const dispatch = useDispatch();
 
-    const indexesNotifications = [1, 2, 3, 4, 5];
+    const indexesNotifications = [1, 2, 3, 4, 5, 6];
     useEffect(() => {
         fetch("/counter")
             .then((res) => res.json())
