@@ -9,13 +9,13 @@ import { setNotifications } from "./notificationsSlice";
 function App() {
     const dispatch = useDispatch();
 
-    // useEffect(() => {
-    //     fetch("/counter")
-    //         .then((res) => res.json())
-    //         .then((json) => {
-    //             dispatch(setValue(json.value));
-    //         });
-    // }, []);
+    useEffect(() => {
+        fetch("/notifications")
+            .then((res) => res.json())
+            .then((json) => {
+                dispatch(setNotifications(json.data));
+            });
+    }, []);
 
     const notifications = useSelector((state) => state.notifications);
 

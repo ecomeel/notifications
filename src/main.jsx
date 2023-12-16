@@ -9,9 +9,9 @@ import './reset.scss';
 import "./index.scss";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-    <React.StrictMode>
+    // <React.StrictMode>
         <Provider store={store}>
             <Notifications />
         </Provider>
-    </React.StrictMode>
+    // </React.StrictMode>
 );
