@@ -13,3 +13,5 @@ function NotificationRecomendation() {
 }
 
 export default NotificationRecomendation
+
+// Получаем id из  url и получаем по id данные уведомления

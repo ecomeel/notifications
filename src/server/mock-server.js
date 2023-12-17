@@ -26,6 +26,13 @@ const initialNotifications = [
         isRead: false,
         typeOf: "recomendation",
     },
+];
+
+// {imgHeader, title, imgs}
+const fullNotifications = [
+    {
+
+    }
 ]
 
 
