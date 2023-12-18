@@ -18,6 +18,9 @@ function App() {
             .then((res) => res.json())
             .then((json) => {
                 dispatch(setNotifications(json.data));
+            })
+            .catch((error) => {
+                console.log(error)
             });
     }, []);
 
