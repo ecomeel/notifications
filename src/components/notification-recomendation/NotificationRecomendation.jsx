@@ -3,13 +3,10 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setSelectedNotification } from "../notifications/selectedNotificationSlice";
+
 function NotificationRecomendation() {
     const { id } = useParams();
     const dispatch = useDispatch();
-    const notif = useSelector((state) => state.selectedNotification);
-
-    // const a = useSelector(state => state);
-    // console.log(a)
 
     useEffect(() => {
         fetch("/fullNotifications")
@@ -20,19 +17,38 @@ function NotificationRecomendation() {
                     (notification) => id == notification.id
                 );
                 dispatch(setSelectedNotification(selectedNot));
-                console.log(notif)
             });
     }, []);
 
+    const notification = useSelector((state) => state.selectedNotification);
+    const products = notification.products;
+    // console.log(products);
+
     return (
-        <div className="recomendation">
-            <Link to="/">Назад</Link>
-            <h2>{notif.title}</h2>
-            {/* <img src="" alt="" /> */}
-        </div>
+        <>
+            <div className="recomendation">
+                <Link to="/">Назад</Link>
+
+                <div className="">
+                    <img src={notification.img} alt="" />
+                    <h2>{notification.title}</h2>
+                    <p>{notification.description}</p>
+                    <ul className="">
+                        {console.log(products)}
+                        {products && products.map((product) => (
+                            <li key={product.name}>
+                                <img src={product.productImg} alt="" />
+                                <h3>{product.name}</h3>
+                                <p>{product.price}</p>
+                            </li>
+                        ))}
+
+                    </ul>
+                </div>
+            </div>
+        </>
     );
 }
 
 export default NotificationRecomendation;
 
-// Получаем id из  url и получаем по id данные уведомления

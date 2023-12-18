@@ -8,6 +8,10 @@ export const selectedNotificationSlice = createSlice({
             state.id = action.payload.id;
             state.description = action.payload.description;
             state.products = action.payload.products;
+            state.img = action.payload.img
+
+            // state.page = action.payload.page
+
         },
     },
 });

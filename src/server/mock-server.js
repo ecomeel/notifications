@@ -17,44 +17,6 @@ const initialNotifications = [
         description: "Собрали товары, которые вам будут по вкусу",
         isRead: false,
         typeOf: "recomendation",
-        // fullNotification: {
-        //     img: recImg,
-        //     title: "Супер предложения",
-        //     description:
-        //         "Собрали для вас горячие предложения на основе ваших просмотров. Посмотрите, возможно они вас заинтересуют.",
-        //     products: [
-        //         {
-        //             productImg: desktopImg,
-        //             price: 30000,
-        //             name: 'Samsung 4k 55"',
-        //         },
-        //         {
-        //             productImg: ipadImg,
-        //             price: 10000,
-        //             name: "Ipad mini 4 16GB",
-        //         },
-        //         {
-        //             productImg: iphone11Img,
-        //             price: 23990,
-        //             name: "IPhone 11 128GB",
-        //         },
-        //         {
-        //             productImg: macbookImg,
-        //             price: 65000,
-        //             name: 'Apple MacBook Air 13" M1/8Gb/256Gb Silver',
-        //         },
-        //         {
-        //             productImg: pkImg,
-        //             price: 65900,
-        //             name: "Игровой компьютер / пк i5 12400f / 2060 super",
-        //         },
-        //         {
-        //             productImg: printerImg,
-        //             price: 12000,
-        //             name: "Цветной лазерный принтер мфу Samsung CLX-3185FN",
-        //         },
-        //     ],
-        // },
     },
     {
         id: uuidv4(),
@@ -63,12 +25,6 @@ const initialNotifications = [
         description: "Небольшой опрос, который поможет нам стать лучше",
         isRead: true,
         typeOf: "survey",
-        // fullNotification: {
-        //     img: surveyImg,
-        //     title: "Хотим узнать ваше мнение",
-        //     description:
-        //         "Вы недавно размещали объявление на нашей площадке - расскажите, что понравилось, а что нам стоит изменить. Ваше мнение поможет нам понять, что можно улучшить.",
-        // },
     },
 ];
 
