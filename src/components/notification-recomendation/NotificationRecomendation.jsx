@@ -22,7 +22,6 @@ function NotificationRecomendation() {
 
     const notification = useSelector((state) => state.selectedNotification);
     const products = notification.products;
-    // console.log(products);
 
     return (
         <>

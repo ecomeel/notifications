@@ -35,7 +35,7 @@ function App() {
                             element={<NotificationRecomendation />}
                         />
                         <Route
-                            path="survey/:typeOf/:id"
+                            path="survey/:id"
                             element={<NotificationSurvey />}
                         />
                     </Route>

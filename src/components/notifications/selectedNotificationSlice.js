@@ -4,14 +4,13 @@ export const selectedNotificationSlice = createSlice({
     initialState: {},
     reducers: {
         setSelectedNotification: (state, action) => {
-            state.title = action.payload.title
+            state.title = action.payload.title;
             state.id = action.payload.id;
             state.description = action.payload.description;
-            state.products = action.payload.products;
-            state.img = action.payload.img
-
-            // state.page = action.payload.page
-
+            if (action.payload.products) {
+                state.products = action.payload.products;
+            }
+            state.img = action.payload.img;
         },
     },
 });
