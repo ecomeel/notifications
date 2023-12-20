@@ -2,7 +2,9 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+
 import { setSelectedNotification } from "../../store/selectedNotificationSlice";
+import './notification-recomendation.scss'
 
 function NotificationRecomendation() {
     const { id } = useParams();
@@ -26,23 +28,24 @@ function NotificationRecomendation() {
     return (
         <>
             <div className="recomendation">
-                <Link to="/">Назад</Link>
+                <Link className="back-btn" to="/">Назад</Link>
 
-                <div className="">
-                    <img src={notification.img} alt="" />
-                    <h2>{notification.title}</h2>
-                    <p>{notification.description}</p>
-                    <ul className="">
+                <div className="recomendation__wrapper">
+                    <img className="recomendation__image" src={notification.img} alt="" />
+                    <h2 className="recomendation__title">{notification.title}</h2>
+                    <p className="recomendation__description">{notification.description}</p>
+                    <ul className="recomendation__products">
                         {console.log(products)}
                         {products && products.map((product) => (
-                            <li key={product.name}>
-                                <img src={product.productImg} alt="" />
-                                <h3>{product.name}</h3>
-                                <p>{product.price}</p>
+                            <li className="recomendation__product product" key={product.name}>
+                                <img className="product__image" src={product.productImg} alt="" />
+                                <h3 className="product__name">{product.name}</h3>
+                                <p className="product__price">{product.price} ₽</p>
                             </li>
                         ))}
 
                     </ul>
+                    <button className="recomendation__check-btn">Посмотреть</button>
                 </div>
             </div>
         </>

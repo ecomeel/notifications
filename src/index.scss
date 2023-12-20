@@ -21,3 +21,15 @@ body, html {
     border-top-left-radius: 50px;
     box-shadow: 0 -25px 30px #00000012;
 }
+
+.back-btn {
+    padding: 10px 20px;
+    font-size: 25px;
+    color: black;
+    background-color: rgb(244, 244, 244);
+    border-radius: 10px;
+
+    &:hover {
+        opacity: .5;
+    }
+}
