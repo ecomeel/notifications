@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 
 import "./server/mock-server.js";
-import { store } from "./store.js";
+import { store } from "./store/store.js";
 import Notifications from "./components/notifications/Notifications.jsx";
 import "./reset.scss";
 import "./index.scss";

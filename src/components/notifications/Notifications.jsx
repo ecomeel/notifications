@@ -8,7 +8,8 @@ import Layout from "../layout/Layout";
 import NotificationRecomendation from "../notification-recomendation/NotificationRecomendation";
 import NotificationSurvey from "../notification-survey/NotificationSurvey";
 import NotificationsList from "../notifications-list/NotificationsList";
-import { setNotifications } from "./notificationsSlice";
+
+import { setNotifications } from "../../store/notificationsSlice";
 
 function App() {
     const dispatch = useDispatch();

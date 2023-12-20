@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setSelectedNotification } from "../notifications/selectedNotificationSlice";
+import { setSelectedNotification } from "../../store/selectedNotificationSlice";
 
 function NotificationRecomendation() {
     const { id } = useParams();
