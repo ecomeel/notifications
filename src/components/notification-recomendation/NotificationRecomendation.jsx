@@ -35,7 +35,6 @@ function NotificationRecomendation() {
                     <h2 className="recomendation__title">{notification.title}</h2>
                     <p className="recomendation__description">{notification.description}</p>
                     <ul className="recomendation__products">
-                        {console.log(products)}
                         {products && products.map((product) => (
                             <li className="recomendation__product product" key={product.name}>
                                 <img className="product__image" src={product.productImg} alt="" />
