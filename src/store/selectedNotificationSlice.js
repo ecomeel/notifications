@@ -9,9 +9,7 @@ export const selectedNotificationSlice = createSlice({
     },
     reducers: {
         setSelectedNotification: (state, action) => {
-            for (let key in action.payload) {
-                state.notification[key] = action.payload[key];
-            }
+            state.notification = action.payload
         },
         setIsNotificationLoading(state, action) {
             state.isNotificationLoading = action.payload;

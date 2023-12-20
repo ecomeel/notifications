@@ -10,7 +10,7 @@ export const notificationsSlice = createSlice({
     },
     reducers: {
         setNotifications: (state, action) => {
-            state.notifications.push(...action.payload);
+            state.notifications = action.payload
         },
         setIsNotificationsLoading(state, action) {
             state.isNotificationsLoading = action.payload;
