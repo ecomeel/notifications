@@ -1,24 +1,34 @@
 import { createSlice } from "@reduxjs/toolkit";
 export const selectedNotificationSlice = createSlice({
     name: "selectedNotification",
-    initialState: {},
+    initialState: {
+        notification: {},
+        isNotificationLoading: false,
+        isNotificationLoadingError: false,
+        isNotificationLoadingSuccess: false,
+    },
     reducers: {
         setSelectedNotification: (state, action) => {
-            // state.title = action.payload.title;
-            // state.id = action.payload.id;
-            // state.description = action.payload.description;
-            // if (action.payload.products) {
-            //     state.products = action.payload.products;
-            // }
-            // state.img = action.payload.img;
-
             for (let key in action.payload) {
-                state[key] = action.payload[key]
+                state.notification[key] = action.payload[key];
             }
-            // console.log(state)
+        },
+        setIsNotificationLoading(state, action) {
+            state.isNotificationLoading = action.payload;
+        },
+        setIsNotificationLoadingError(state, action) {
+            state.isNotificationLoadingError = action.payload;
+        },
+        setIsNotificationLoadingSuccess(state, action) {
+            state.isNotificationLoadingSuccess = action.payload;
         },
     },
 });
 
-export const { setSelectedNotification } = selectedNotificationSlice.actions;
+export const {
+    setSelectedNotification,
+    setIsNotificationLoading,
+    setIsNotificationLoadingError,
+    setIsNotificationLoadingSuccess,
+} = selectedNotificationSlice.actions;
 export default selectedNotificationSlice.reducer;

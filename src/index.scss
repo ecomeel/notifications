@@ -33,3 +33,14 @@ body, html {
         opacity: .5;
     }
 }
+
+.loading {
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 70px;
+    display: block;
+}
+.error {
+    font-size: 30px;
+    color: red;
+}

@@ -1,27 +1,39 @@
 import "./notifications.scss";
 import { useDispatch } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
-import loadingImg from "../../assets/loading.gif";
 import Layout from "../layout/Layout";
 import NotificationRecomendation from "../notification-recomendation/NotificationRecomendation";
 import NotificationSurvey from "../notification-survey/NotificationSurvey";
 import NotificationsList from "../notifications-list/NotificationsList";
 
-import { setNotifications } from "../../store/notificationsSlice";
+import {
+    setNotifications,
+    setIsNotificationsLoading,
+    setIsNotificationsLoadingError,
+    setIsNotificationsLoadingSuccess,
+} from "../../store/notificationsSlice";
 
 function App() {
     const dispatch = useDispatch();
 
     useEffect(() => {
+        dispatch(setIsNotificationsLoading(true));
+        dispatch(setIsNotificationsLoadingError(false));
+        dispatch(setIsNotificationsLoadingSuccess(false));
         fetch("/notifications")
             .then((res) => res.json())
             .then((json) => {
                 dispatch(setNotifications(json.data));
+                dispatch(setIsNotificationsLoadingSuccess(true));
             })
             .catch((error) => {
-                console.log(error)
+                console.log(error);
+                dispatch(setIsNotificationsLoadingError(true));
+            })
+            .finally(() => {
+                dispatch(setIsNotificationsLoading(false));
             });
     }, []);
 
