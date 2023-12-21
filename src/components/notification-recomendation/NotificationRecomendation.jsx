@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import loadingImg from "../../assets/loading.gif";
+// import { changeStatusView } from "../../store/notificationsSlice";
 import {
     setSelectedNotification,
     setIsNotificationLoading,
@@ -39,6 +40,11 @@ function NotificationRecomendation() {
             });
     }, []);
 
+    // const notifications = useSelector(
+    //     (state) => state.notifications.notifications
+    // );
+    // dispatch(changeStatusView(id))
+
     const notification = useSelector(
         (state) => state.selectedNotification.notification
     );
@@ -52,6 +58,7 @@ function NotificationRecomendation() {
     const isLoadingSuccess = useSelector(
         (state) => state.selectedNotification.isNotificationLoadingSuccess
     );
+
     return (
         <>
             <div className="recomendation">

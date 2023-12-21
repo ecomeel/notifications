@@ -10,11 +10,11 @@ import "./reset.scss";
 import "./index.scss";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-    <React.StrictMode>
+    // <React.StrictMode>
         <BrowserRouter>
             <Provider store={store}>
                 <Notifications />
             </Provider>
         </BrowserRouter>
-    </React.StrictMode>
+    // {/* </React.StrictMode> */}
 );

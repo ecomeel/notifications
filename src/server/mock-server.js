@@ -11,7 +11,7 @@ import printerImg from "../assets/products/printer.png";
 
 const initialNotifications = [
     {
-        id: uuidv4(),
+        id: 1,
         title: "Горячие предложения 🔥",
         data: "12.01.2022 14:29",
         description: "Собрали товары, которые вам будут по вкусу",
@@ -19,7 +19,7 @@ const initialNotifications = [
         typeOf: "recomendation",
     },
     {
-        id: uuidv4(),
+        id: 2,
         title: "Хотим узнать ваше мнение",
         data: "3.04.2023 11:03",
         description: "Небольшой опрос, который поможет нам стать лучше",
@@ -79,13 +79,26 @@ const fullNotifications = [
 
 createServer({
     routes() {
-        this.get("/notifications", () => {
-            return {
-                data: initialNotifications,
-            };
-        });
-        this.get("/fullNotifications", () => {
-            return { data: fullNotifications };
+        this.get(
+            "/notifications",
+            () => {
+                return {
+                    data: initialNotifications,
+                };
+            },
+            { timing: 1000 }
+        );
+        this.get(
+            "/fullNotifications",
+            () => {
+                return { data: fullNotifications };
+            },
+            { timing: 1000 }
+        );
+        this.post("/notifications", (schema, request) => {
+            let attrs = JSON.parse(request.requestBody);
+            console.log(attrs);
+            debugger;
         });
     },
 });

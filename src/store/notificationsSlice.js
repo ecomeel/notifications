@@ -10,7 +10,15 @@ export const notificationsSlice = createSlice({
     },
     reducers: {
         setNotifications: (state, action) => {
-            state.notifications = action.payload
+            state.notifications = action.payload;
+        },
+        changeStatusView: (state, action) => {
+            state.notifications.forEach(notif => {
+                if (notif.id == action.payload) {
+                    notif.isRead = true
+                }
+            });
+            
         },
         setIsNotificationsLoading(state, action) {
             state.isNotificationsLoading = action.payload;
@@ -26,6 +34,7 @@ export const notificationsSlice = createSlice({
 
 export const {
     setNotifications,
+    changeStatusView,
     setIsNotificationsLoading,
     setIsNotificationsLoadingError,
     setIsNotificationsLoadingSuccess,

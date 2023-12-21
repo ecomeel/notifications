@@ -1,11 +1,18 @@
 import { Link } from "react-router-dom";
 import isReadImg from "../../assets/unread.png";
 import "./notification-preview.scss";
+import { changeStatusView } from "../../store/notificationsSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 function NotificationPreview({ notification }) {
+    const dispatch = useDispatch();
+
     return (
         <Link to={`${notification.typeOf}/${notification.id}`}>
-            <li className="notification-preview">
+            <li
+                onClick={() => dispatch(changeStatusView(notification.id))}
+                className="notification-preview"
+            >
                 <header className="notification-preview__header">
                     <h2 className="notification-preview__title">
                         {notification.title}
@@ -22,7 +29,7 @@ function NotificationPreview({ notification }) {
                         hidden={notification.isRead}
                         className="notification-preview__read-status"
                         src={isReadImg}
-                        alt=""
+                        alt="Check status"
                     />
                 </div>
             </li>
