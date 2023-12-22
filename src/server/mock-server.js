@@ -85,7 +85,7 @@ createServer({
                     data: initialNotifications,
                 };
             },
-            { timing: 1000 }
+            { timing: 300 }
         );
         this.post("/notifications", (schema, request) => {
             let attrs = JSON.parse(request.requestBody);
@@ -97,7 +97,7 @@ createServer({
             () => {
                 return { data: fullNotifications };
             },
-            { timing: 1000 }
+            { timing: 300 }
         );
     },
 });
