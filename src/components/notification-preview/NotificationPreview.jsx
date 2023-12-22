@@ -8,7 +8,7 @@ function NotificationPreview({ notification }) {
     const dispatch = useDispatch();
 
     return (
-        <Link to={`${notification.typeOf}/${notification.id}`}>
+        <Link to={`/${notification.typeOf}/${notification.id}`}>
             <li
                 onClick={() => dispatch(changeStatusView(notification.id))}
                 className="notification-preview"

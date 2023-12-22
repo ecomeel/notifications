@@ -44,11 +44,11 @@ function App() {
                     <Route path="/" element={<Layout />}>
                         <Route index element={<NotificationsList />} />
                         <Route
-                            path="recomendation/:id"
+                            path="/recomendation/:id"
                             element={<NotificationRecomendation />}
                         />
                         <Route
-                            path="survey/:id"
+                            path="/survey/:id"
                             element={<NotificationSurvey />}
                         />
                     </Route>
