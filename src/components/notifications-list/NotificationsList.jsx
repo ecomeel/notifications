@@ -1,37 +1,9 @@
-import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
 import NotificationPreview from "../notification-preview/NotificationPreview";
 import loadingImg from "../../assets/loading.gif";
-import {
-    setNotifications,
-    setIsNotificationsLoading,
-    setIsNotificationsLoadingError,
-    setIsNotificationsLoadingSuccess,
-} from "../../store/notificationsSlice";
 
 function NotificationsList() {
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(setIsNotificationsLoading(true));
-        dispatch(setIsNotificationsLoadingError(false));
-        dispatch(setIsNotificationsLoadingSuccess(false));
-        fetch("/notifications")
-            .then((res) => res.json())
-            .then((json) => {
-                dispatch(setNotifications(json.data));
-                dispatch(setIsNotificationsLoadingSuccess(true));
-            })
-            .catch((error) => {
-                console.log(error);
-                dispatch(setIsNotificationsLoadingError(true));
-            })
-            .finally(() => {
-                dispatch(setIsNotificationsLoading(false));
-            });
-    }, []);
-
     const notifications = useSelector(
         (state) => state.notifications.notifications
     );

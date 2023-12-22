@@ -88,6 +88,11 @@ createServer({
             },
             { timing: 1000 }
         );
+        this.post("/notifications", (schema, request) => {
+            let attrs = JSON.parse(request.requestBody);
+            console.log(attrs);
+            debugger;
+        });
         this.get(
             "/fullNotifications",
             () => {
@@ -95,10 +100,5 @@ createServer({
             },
             { timing: 1000 }
         );
-        this.post("/notifications", (schema, request) => {
-            let attrs = JSON.parse(request.requestBody);
-            console.log(attrs);
-            debugger;
-        });
     },
 });

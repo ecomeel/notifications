@@ -39,6 +39,14 @@ function NotificationSurvey() {
             });
     }, []);
 
+    const notifications = useSelector(
+        (state) => state.notifications.notifications
+    );
+    fetch("/notifications", {
+        method: "POST",
+        body: notifications,
+    });
+
     const notification = useSelector(
         (state) => state.selectedNotification.notification
     );
