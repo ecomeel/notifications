@@ -41,7 +41,7 @@ function App() {
         <div className="notifications">
             <div className="container">
                 <Routes>
-                    {/* <Route path="/" element={<Layout />}>
+                    <Route path="/" element={<Layout />}>
                         <Route index element={<NotificationsList />} />
                         <Route
                             path="recomendation/:id"
@@ -51,12 +51,7 @@ function App() {
                             path="survey/:id"
                             element={<NotificationSurvey />}
                         />
-                    </Route> */}
-                    <Route
-                        path="recomendation/:id"
-                        element={<NotificationRecomendation />}
-                    />
-                    <Route path="survey/:id" element={<NotificationSurvey />} />
+                    </Route>
                 </Routes>
             </div>
         </div>
