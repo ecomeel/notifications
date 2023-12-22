@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "/notifications/#",
+  "homepage": "https://ecomeel.github.io/notifications/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

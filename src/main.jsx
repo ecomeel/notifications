@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
+// import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 
 import "./server/mock-server.js";
 import { store } from "./store/store.js";
@@ -10,11 +11,11 @@ import "./reset.scss";
 import "./index.scss";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-    // <React.StrictMode>
-        <BrowserRouter>
+    <React.StrictMode>
+        <HashRouter>
             <Provider store={store}>
                 <Notifications />
             </Provider>
-        </BrowserRouter>
-    // {/* </React.StrictMode> */}
+        </HashRouter>
+    // </React.StrictMode>
 );
