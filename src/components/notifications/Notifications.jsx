@@ -40,8 +40,8 @@ function App() {
     return (
         <div className="notifications">
             <div className="container">
-                {/* <Routes>
-                    <Route path="/" element={<Layout />}>
+                <Routes>
+                    {/* <Route path="/" element={<Layout />}>
                         <Route index element={<NotificationsList />} />
                         <Route
                             path="recomendation/:id"
@@ -51,9 +51,13 @@ function App() {
                             path="survey/:id"
                             element={<NotificationSurvey />}
                         />
-                    </Route>
-                </Routes> */}
-                <h1>hello</h1>
+                    </Route> */}
+                    <Route
+                        path="recomendation/:id"
+                        element={<NotificationRecomendation />}
+                    />
+                    <Route path="survey/:id" element={<NotificationSurvey />} />
+                </Routes>
             </div>
         </div>
     );
