@@ -1,7 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
+
+import "./notification-survey.scss";
 
 import loadingImg from "../../assets/loading.gif";
 import {
@@ -10,7 +12,6 @@ import {
     setIsNotificationLoadingError,
     setIsNotificationLoadingSuccess,
 } from "../../store/selectedNotificationSlice";
-import "./notification-survey.scss";
 
 function NotificationSurvey() {
     const { id } = useParams();

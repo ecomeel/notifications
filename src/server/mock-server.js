@@ -1,4 +1,3 @@
-import { v4 as uuidv4 } from "uuid";
 import { createServer } from "miragejs";
 import recImg from "../assets/recomendation.png";
 import surveyImg from "../assets/survey.png";

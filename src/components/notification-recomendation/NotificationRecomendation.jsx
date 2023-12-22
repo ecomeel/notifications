@@ -3,15 +3,15 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+import "./notification-recomendation.scss";
+
 import loadingImg from "../../assets/loading.gif";
-// import { changeStatusView } from "../../store/notificationsSlice";
 import {
     setSelectedNotification,
     setIsNotificationLoading,
     setIsNotificationLoadingError,
     setIsNotificationLoadingSuccess,
 } from "../../store/selectedNotificationSlice";
-import "./notification-recomendation.scss";
 
 function NotificationRecomendation() {
     const { id } = useParams();
@@ -52,6 +52,7 @@ function NotificationRecomendation() {
         (state) => state.selectedNotification.notification
     );
     const products = notification.products;
+
     const isLoading = useSelector(
         (state) => state.selectedNotification.isNotificationLoading
     );

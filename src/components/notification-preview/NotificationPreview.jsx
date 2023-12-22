@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
-import isReadImg from "../../assets/unread.png";
+import { useDispatch } from "react-redux";
+
 import "./notification-preview.scss";
+
+import isReadImg from "../../assets/unread.png";
 import { changeStatusView } from "../../store/notificationsSlice";
-import { useDispatch, useSelector } from "react-redux";
 
 function NotificationPreview({ notification }) {
     const dispatch = useDispatch();

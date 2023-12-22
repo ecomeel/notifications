@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
-// import { BrowserRouter } from "react-router-dom";
 import { HashRouter } from "react-router-dom";
 
 import "./server/mock-server.js";
@@ -17,5 +16,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                 <Notifications />
             </Provider>
         </HashRouter>
-    // </React.StrictMode>
+    </React.StrictMode>
 );
